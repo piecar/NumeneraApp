@@ -2,17 +2,23 @@
   <div class="picker">
     <h1>{{ msg }}</h1>
     <h2>Cypher Picker</h2>
+    <CypherPicker></CypherPicker>
     <h2>Oddity Picker</h2>
   </div>
 </template>
 
 <script>
+import CypherPicker from './CypherPicker';
+
 export default {
-  name: 'Picker',
+  name: 'PickerViewer',
   data() {
     return {
       msg: 'Pickers',
     };
+  },
+  components: {
+    CypherPicker,
   },
 };
 </script>
@@ -34,8 +40,5 @@ a {
   color: #42b983;
 }
 .picker{
-    position:fixed;
-    bottom:0px;
-    left:50%;
 }
 </style>

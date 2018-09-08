@@ -1,38 +1,16 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta charset=utf-8>
-  <meta name=viewport content="width=device-width,initial-scale=1">
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="msapplication-tap-highlight" content="no" />
-  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-  <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
-  <!-- Good default declaration:
-    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-        * Enable inline JS: add 'unsafe-inline' to default-src
-        * Enable eval(): add 'unsafe-eval' to default-src
-    * Create your own at http://cspisawesome.com
-    -->
-  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-
-  <link rel="stylesheet" type="text/css" href="css/index.css" />
-  <title>numenera-vue</title>
-  <link href=/static/css/app.032ab04a0a9486c313d9884150bee592.css rel=stylesheet>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta http-equiv=”Content-Security-Policy” content=”default-src ‘self’ data: gap: https://ssl.gstatic.com ‘unsafe-eval’; style-src ‘self’ ‘unsafe-inline’; media-src *; img-src ‘self’ data: content:; connect-src ‘self’ ws:;”>
+    <title>numenera-vue</title>
+    <link href=/static/css/app.6ed1e069e972fa5f0cd240763e9c1e46.css rel=stylesheet>
 </head>
-
 <body>
-  <div id=app></div>
-  <script type=text/javascript src=/static/js/manifest.2ae2e69a05c33dfc65f8.js> </script> <script type=text/javascript src=/static/js/vendor.2420502e2b2c7f321d64.js> </script> <script type=text/javascript src=/static/js/app.cda9eea43bd2acedfa05.js>
-    </script> <script type="text/javascript" src="cordova.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
-  <script type="text/javascript">
-    app.initialize();
-  </script>
-  <h1>PhoneGap</h1>
+<div id=app></div>
+<script type=text/javascript src=/static/js/manifest.2ae2e69a05c33dfc65f8.js></script>
+<script type=text/javascript src=/static/js/vendor.92a434c973eefec2db1a.js></script>
+<script type=text/javascript src=/static/js/app.dd5f516d48a19dbcc466.js></script>
 </body>
-
 </html>

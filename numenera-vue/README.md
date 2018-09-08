@@ -20,6 +20,9 @@ npm run build --report
 # run unit tests
 npm run unit
 
+# run unit tests with watch
+npm run unit -- --watch
+
 # run all tests
 npm test
 ```
