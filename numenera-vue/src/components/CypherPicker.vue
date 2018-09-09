@@ -1,7 +1,11 @@
 <template>
   <div class="picker">
+    <h2>Cypher Picker</h2>
     <h2>Set your rolls</h2>
-    <FormButton button-text="Salvage"></FormButton>
+    <FormButton
+      button-text="Salvage"
+      @buttonClick="handleButtonClick"
+    ></FormButton>
   </div>
 </template>
 
@@ -11,9 +15,13 @@ import FormButton from './FormButton';
 export default {
   name: 'CypherPicker',
   components: { FormButton },
+  methods: {
+    handleButtonClick() {
+      // TODO: Call Database with Cyphers
+    },
+  },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 </style>

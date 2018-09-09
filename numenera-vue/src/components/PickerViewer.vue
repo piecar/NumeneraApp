@@ -1,7 +1,6 @@
 <template>
   <div class="picker">
     <h1>{{ msg }}</h1>
-    <h2>Cypher Picker</h2>
     <CypherPicker></CypherPicker>
     <h2>Oddity Picker</h2>
   </div>

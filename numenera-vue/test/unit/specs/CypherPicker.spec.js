@@ -1,21 +1,30 @@
-import { mount, shallowMount } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import CypherPicker from '@/components/CypherPicker';
 import FormButton from '@/components/FormButton';
 
 describe('CypherPicker.vue', () => {
-  let Component;
+  let Wrapper;
 
   beforeEach(() => {
-    Component = shallowMount(CypherPicker);
+    Wrapper = shallowMount(CypherPicker);
   });
 
   it('should render correct contents', () => {
-    expect(Component.vm.$el.querySelector('.picker h2').textContent)
+    expect(Wrapper.vm.$el.querySelectorAll('.picker h2')[0].textContent)
+      .toEqual('Cypher Picker');
+    expect(Wrapper.vm.$el.querySelectorAll('.picker h2')[1].textContent)
       .toEqual('Set your rolls');
   });
 
   it('should contain a FormButton', () => {
-    const wrapper = mount(CypherPicker);
-    expect(wrapper.contains(FormButton)).toBe(true);
+    expect(Wrapper.contains(FormButton)).toBe(true);
+  });
+
+  it('calls handleButtonClick when @buttonClick occurs', () => {
+    const stub = jest.fn();
+    Wrapper.setMethods({ handleButtonClick: stub });
+    Wrapper.find(FormButton).vm.$emit('buttonClick');
+
+    expect(stub).toBeCalled();
   });
 });

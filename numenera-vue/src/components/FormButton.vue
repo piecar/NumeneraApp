@@ -1,6 +1,7 @@
 <template>
   <div class="formButton">
-    <button class="button">{{buttonText}}</button>
+    <button class="button" @click="$emit('buttonClick')">{{buttonText}}
+    </button>
   </div>
 </template>
 

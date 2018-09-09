@@ -21,8 +21,7 @@ describe('FormButton.vue', () => {
       expect(Wrapper.props().buttonText).toBe('Salvage');
     });
     it('should have a buttonText', () => {
-      expect(Wrapper.vm.$el.querySelector('.button').textContent)
-        .toEqual('Salvage');
+      expect(Wrapper.text()).toBe('Salvage');
     });
   });
 
@@ -40,6 +39,14 @@ describe('FormButton.vue', () => {
 
     it('message is required', () => {
       expect(buttonText.required).toBeTruthy();
+    });
+  });
+
+  describe('Events', () => {
+    it('sends a click event to parent', () => {
+      const button = Wrapper.find('.button');
+      button.trigger('click');
+      expect(Wrapper.emitted('buttonClick')).toBeTruthy();
     });
   });
 });

@@ -13,8 +13,6 @@ describe('PickerViewer.vue', () => {
     expect(Component.vm.$el.querySelector('.picker h1').textContent)
       .toEqual('Pickers');
     expect(Component.vm.$el.querySelectorAll('.picker h2')[0].textContent)
-      .toEqual('Cypher Picker');
-    expect(Component.vm.$el.querySelectorAll('.picker h2')[1].textContent)
       .toEqual('Oddity Picker');
   });
 
