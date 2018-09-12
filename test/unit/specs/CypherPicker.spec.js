@@ -14,6 +14,10 @@ describe('CypherPicker.vue', () => {
       .toEqual('Cypher Picker');
     expect(Wrapper.vm.$el.querySelectorAll('.picker h2')[1].textContent)
       .toEqual('Set your rolls');
+    expect(Wrapper.vm.$el.querySelectorAll('p')[0].textContent)
+      .toEqual('d100');
+    expect(Wrapper.vm.$el.querySelectorAll('p')[1].textContent)
+      .toEqual('d6');
   });
 
   it('should contain a FormButton', () => {
@@ -27,4 +31,12 @@ describe('CypherPicker.vue', () => {
 
     expect(stub).toBeCalled();
   });
+
+  it('should pick a correct cypher', () => {
+    Wrapper.setData({ d100: 1, d6: 1, cypher: null });
+    Wrapper.vm.handleButtonClick();
+    expect(Wrapper.vm.$data.cypher.name).toBe('Adhesion Clamps');
+    expect(Wrapper.vm.$data.cypher.levelModifier).toBe(1);
+  });
+
 });

@@ -9,6 +9,7 @@
 
 export default {
   name: 'FormButton',
+  data() { return { nothing: null }; },
   props: {
     buttonText: {
       type: String,
