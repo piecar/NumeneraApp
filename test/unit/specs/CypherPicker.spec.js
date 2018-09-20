@@ -16,9 +16,9 @@ describe('CypherPicker.vue', () => {
       .toEqual('Cypher Picker');
     expect(Wrapper.vm.$el.querySelectorAll('.picker h2')[1].textContent)
       .toEqual('Set your rolls');
-    expect(Wrapper.vm.$el.querySelectorAll('p')[0].textContent)
+    expect(Wrapper.vm.$el.querySelectorAll('label')[0].textContent)
       .toEqual('d100');
-    expect(Wrapper.vm.$el.querySelectorAll('p')[1].textContent)
+    expect(Wrapper.vm.$el.querySelectorAll('label')[1].textContent)
       .toEqual('d6');
   });
 

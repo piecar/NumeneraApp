@@ -5,12 +5,10 @@
     <div class="inputs">
       <label for="d100">d100</label>
       <input class="inputBox" id="d100" v-model.number="d100">
-      <p>d100</p>
     </div>
     <div class="inputs">
       <label for="d6">d6</label>
       <input class="inputBox" id="d6" v-model.number="d6">
-      <p>d6</p>
     </div>
     <FormButton
       button-text="Salvage"
@@ -59,5 +57,14 @@ export default {
 <style scoped>
   .inputs {
     display: inline-block;
+  }
+  .inputBox {
+    display: block;
+  }
+  label {
+    display: block;
+  }
+  * {
+    border: 1px solid red !important;
   }
 </style>
