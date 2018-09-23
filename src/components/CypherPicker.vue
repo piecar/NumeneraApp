@@ -64,7 +64,7 @@ export default {
   label {
     display: block;
   }
-  * {
-    border: 1px solid red !important;
-  }
+  /** {*/
+    /*border: 1px solid red !important;*/
+  /*}*/
 </style>
