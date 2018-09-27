@@ -29,8 +29,22 @@ export const chemicalFactory = (diceRoll) => {
     return 'Increases Speed Edge by 1 for one hour';
   } else if (diceRoll >= 86 && diceRoll <= 95) {
     return 'Increases Intellect Edge by 1 for one hour';
-  } else if (diceRoll >= 96 && diceRoll <= 100) {
-    return 'Restores all Pools to full';
   }
+  return 'Restores all Pools to full';
+};
+
+export const detonation = (diceRoll) => {
+  if (diceRoll <= 10) {
+    return 'Cell-disrupting (harms only flesh)';
+  } else if (diceRoll >= 11 && diceRoll <= 30) {
+    return 'Corrosive';
+  } else if (diceRoll >= 31 && diceRoll <= 40) {
+    return 'Electrical discharge';
+  } else if (diceRoll >= 41 && diceRoll <= 50) {
+    return 'Heat drain (cold)';
+  } else if (diceRoll >= 51 && diceRoll <= 75) {
+    return 'Fire';
+  }
+  return 'Shrapnel';
 };
 

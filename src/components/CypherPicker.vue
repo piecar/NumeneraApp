@@ -14,6 +14,16 @@
       button-text="Salvage"
       @buttonClick="handleButtonClick"
     ></FormButton>
+    <div v-if="showExtraEffects">
+      <div class="inputs" id="extraEffectInput">
+        <label for="extraEffectId100">d100</label>
+        <input class="inputBox" id="extraEffectId100" v-model.number="extraEffectd100">
+      </div>
+      <FormButton id="extraEffectButton"
+        button-text="Extra Effect"
+        @buttonClick="handleExtraEffects"
+      ></FormButton>
+    </div>
     <CypherDisplay
       v-bind:cypher="cypher" v-if="showCypher">
     </CypherDisplay>
@@ -32,12 +42,16 @@ export default {
     return {
       d100: 0,
       d6: 0,
+      extraEffectd100: 0,
       cypher: null,
       showCypher: false,
+      showExtraEffects: false,
     };
   },
   methods: {
     handleButtonClick() {
+      this.showExtraEffects = false;
+      this.showCypher = false;
       if (this.d100 !== 0 || this.d6 !== 0) {
         const cypherPick = cyphers[this.d100 - 1];
         this.cypher = new Cypher(
@@ -45,9 +59,18 @@ export default {
           cypherPick.anoetic,
           this.d6 + cypherPick.levelModifier,
           cypherPick.formFactor(),
-          cypherPick.effect);
-        this.showCypher = true;
+          cypherPick.effect,
+          cypherPick.extraEffect);
+        if (typeof cypherPick.extraEffect !== 'function') {
+          this.showCypher = true;
+        } else {
+          this.showExtraEffects = true;
+        }
       }
+    },
+    handleExtraEffects() {
+      this.cypher.extraEffect = this.cypher.extraEffect(this.extraEffectd100);
+      this.showCypher = true;
     },
   },
 };

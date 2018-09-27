@@ -6,6 +6,7 @@
     <h3 id="level">Level: {{cypher.levelModifier}}</h3>
     <p>Form Factor: {{cypher.formFactorList}}</p>
     <p>Effect: {{cypher.effect}}</p>
+    <p v-if="cypher.extraEffect !== undefined">Extra Effect: {{cypher.extraEffect}}</p>
   </div>
 </template>
 
