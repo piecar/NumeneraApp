@@ -22,6 +22,7 @@ const formFactors = [
   [19, 'Explosive device or ceramic sphere (thrown, short range)'],
   [20, 'Wristband projector (range of 200 feet [61 m])'],
   [21, 'Handheld projector (range of 200 feet [61 m])'],
+  [22, 'Spray canister'],
 ];
 
 export class Cypher {
@@ -56,11 +57,18 @@ const cyphers = [
   new Cypher('Density Nodule', true, 0, [formMap.get(8)], 'For the next 28 hours, each time the weapon the nodule is attached to strikes a solid creature or object, the weapon suddenly increases dramatically in weight, causing the blow to inflict an additional 2 points of damage.'),
   new Cypher('Detonation', true, 2, [formMap.get(16), formMap.get(17), formMap.get(18)], 'Explodes in an immediate radius, inflicting damage equal to the cypher level.', detonation),
   new Cypher('Detonation (Desiccating)', true, 2, [formMap.get(16), formMap.get(18), formMap.get(19)], 'Bursts in an immediate radius, draining moisture from everything within it. Living creatures take damage equal to the cypher level. Water in the area is vaporized.'),
-  new Cypher('Detonation (Flash) ', true, 2, [formMap.get(16), formMap.get(18), formMap.get(19)], 'Bursts in an immediate radius, blinding all within it for one minute'),
-  new Cypher('Detonation (Gravity) ', true, 2, [formMap.get(16), formMap.get(18), formMap.get(19)], 'Bursts in an immediate radius, inflicting damage equal to the cypher level by increasing gravity tremendously for one second. All in the area are crushed to the ground for one round and cannot take physical actions.'),
-  new Cypher('Detonation (Massive) ', true, 2, [formMap.get(20), formMap.get(21)], 'Explodes in a short-range radius, inflicting damage equal to the cypher level.', detonation),
-  new Cypher('Detonation (Matter Disruption) ', false, 4, [formMap.get(16), formMap.get(18), formMap.get(19)], 'Explodes in an immediate radius, releasing nanites that rearrange matter in random ways. Inflicts damage equal to the cypher level.'),
-  new Cypher('Detonation (Pressure) ', true, 2, [formMap.get(16), formMap.get(18), formMap.get(19)], 'Explodes in an immediate radius, inflicting impact damage equal to cypher level. Also moves unattended objects out of the area if they weigh less than 20 pounds (9 kg) per cypher level.'),
+  new Cypher('Detonation (Flash)', true, 2, [formMap.get(16), formMap.get(18), formMap.get(19)], 'Bursts in an immediate radius, blinding all within it for one minute'),
+  new Cypher('Detonation (Gravity)', true, 2, [formMap.get(16), formMap.get(18), formMap.get(19)], 'Bursts in an immediate radius, inflicting damage equal to the cypher level by increasing gravity tremendously for one second. All in the area are crushed to the ground for one round and cannot take physical actions.'),
+  new Cypher('Detonation (Massive)', true, 2, [formMap.get(20), formMap.get(21)], 'Explodes in a short-range radius, inflicting damage equal to the cypher level.', detonation),
+  new Cypher('Detonation (Matter Disruption)', false, 4, [formMap.get(16), formMap.get(18), formMap.get(19)], 'Explodes in an immediate radius, releasing nanites that rearrange matter in random ways. Inflicts damage equal to the cypher level.'),
+  new Cypher('Detonation (Pressure)', true, 2, [formMap.get(16), formMap.get(18), formMap.get(19)], 'Explodes in an immediate radius, inflicting impact damage equal to cypher level. Also moves unattended objects out of the area if they weigh less than 20 pounds (9 kg) per cypher level.'),
+  new Cypher('Detonation (Singularity)', false, 4, [formMap.get(18), formMap.get(19)], 'Explodes and creates a momentary singularity that tears at the fabric of the universe. Inflicts 20 points of damage to all within short range, drawing them (or their remains) together to immediate range (if possible). Player characters in the radius move one step down the damage track if they fail a Might defense roll.'),
+  new Cypher('Detonation (Sonic)', true, 2, [formMap.get(16), formMap.get(18), formMap.get(19)], 'Explodes with terrifying sound, deafening all in an immediate radius.'),
+  new Cypher('Detonation (Spawn)', true, 2, [formMap.get(16), formMap.get(18), formMap.get(19)], 'Bursts in an immediate radius, blinding all within it for one minute and inflicting damage equal to the cypher level. The burst spawns 1d6 additional detonations; on the next round, each additional detonation flies to a random spot within short range and explodes in an immediate radius', detonation),
+  new Cypher('Detonation (Web)', true, 2, [formMap.get(16), formMap.get(18), formMap.get(19)], 'Explodes in an immediate radius and creates sticky strands of goo. PCs caught in the area must use a Might-based action to get out, with the difficulty determined by the cypher level. NPCs break free if their level is higher than the cypher level.'),
+  new Cypher('Disrupting Nodule', true, 0, [formMap.get(8)], 'For the next 28 hours, each time the weapon the nodule is attached to strikes a solid creature or object, it generates a burst of nanites that directly attack organic cells. The affected target takes 1 additional point of damage and loses his next action.'),
+  new Cypher('Eagleseye', true, 0, [formMap.get(3), formMap.get(4), formMap.get(5)], 'Grants the ability to see ten times as far as normal for one hour'),
+  new Cypher('Fireproofing Spray', true, 4, [formMap.get(8)], ' A nonliving object sprayed by this cypher has Armor against fire damage equal to the cypher’s level for 28 hours'),
 ];
 
 export default cyphers;
