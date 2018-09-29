@@ -48,3 +48,28 @@ export const detonation = (diceRoll) => {
   return 'Shrapnel';
 };
 
+export const gasBomb = (diceRoll) => {
+  if (diceRoll <= 10) {
+    return 'Thick smoke: occludes sight while the cloud lasts';
+  } else if (diceRoll >= 11 && diceRoll <= 20) {
+    return 'Choking gas: living creatures that breathe lose their actions to choking and coughing for a number of rounds equal to the cypher level.';
+  } else if (diceRoll >= 21 && diceRoll <= 50) {
+    return 'Poison gas: living creatures that breathe suffer damage equal to the cypher level.s';
+  } else if (diceRoll >= 51 && diceRoll <= 60) {
+    return 'Corrosive gas: everything suffers damage equal to the cypher level.';
+  } else if (diceRoll >= 61 && diceRoll <= 65) {
+    return 'Hallucinogenic gas: living creatures that breathe lose their actions to hallucinations and visions for a number of rounds equal to the cypher level.';
+  } else if (diceRoll >= 66 && diceRoll <= 70) {
+    return 'Nerve gas: living creatures that breathe suffer Speed damage equal to the cypher level.';
+  } else if (diceRoll >= 71 && diceRoll <= 80) {
+    return 'Mind-numbing gas: living creatures that breathe suffer Intellect damage equal to the cypher level.';
+  } else if (diceRoll >= 81 && diceRoll <= 83) {
+    return 'Fear gas: living creatures that breathe and think flee in a random direction in fear (or are paralyzed with fear) for a number of rounds equal to the cypher level.';
+  } else if (diceRoll >= 84 && diceRoll <= 86) {
+    return 'Amnesia gas: living creatures that breathe and think permanently lose all memory of the last minute.';
+  } else if (diceRoll >= 87 && diceRoll <= 96) {
+    return 'Sleep gas: living creatures that breathe fall asleep for a number of rounds equal to the cypher level or until awoken by a violent action or an extremely loud noise.';
+  }
+  return 'Rage gas: living creatures that breathe and think make a melee attack on the nearest creature and continue to do so for a number of rounds equal to the cypher level.';
+};
+

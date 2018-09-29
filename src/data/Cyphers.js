@@ -1,4 +1,4 @@
-import {chemicalFactory, detonation} from './Effects';
+import { chemicalFactory, detonation, gasBomb } from './Effects';
 
 const formFactors = [
   [1, 'Gloves'],
@@ -23,6 +23,12 @@ const formFactors = [
   [20, 'Wristband projector (range of 200 feet [61 m])'],
   [21, 'Handheld projector (range of 200 feet [61 m])'],
   [22, 'Spray canister'],
+  [23, 'Belt'],
+  [24, 'Ring'],
+  [25, 'Bracelet'],
+  [26, 'Handheld Device'],
+  [27, 'Subdermal Injector'],
+  [28, 'Complex Device'],
 ];
 
 export class Cypher {
@@ -68,7 +74,15 @@ const cyphers = [
   new Cypher('Detonation (Web)', true, 2, [formMap.get(16), formMap.get(18), formMap.get(19)], 'Explodes in an immediate radius and creates sticky strands of goo. PCs caught in the area must use a Might-based action to get out, with the difficulty determined by the cypher level. NPCs break free if their level is higher than the cypher level.'),
   new Cypher('Disrupting Nodule', true, 0, [formMap.get(8)], 'For the next 28 hours, each time the weapon the nodule is attached to strikes a solid creature or object, it generates a burst of nanites that directly attack organic cells. The affected target takes 1 additional point of damage and loses his next action.'),
   new Cypher('Eagleseye', true, 0, [formMap.get(3), formMap.get(4), formMap.get(5)], 'Grants the ability to see ten times as far as normal for one hour'),
-  new Cypher('Fireproofing Spray', true, 4, [formMap.get(8)], ' A nonliving object sprayed by this cypher has Armor against fire damage equal to the cypher’s level for 28 hours'),
+  new Cypher('Fireproofing Spray', true, 4, [formMap.get(22)], 'A nonliving object sprayed by this cypher has Armor against fire damage equal to the cypher’s level for 28 hours'),
+  new Cypher('Flame-Retardant Wall', true, 0, [formMap.get(23), formMap.get(24), formMap.get(25), formMap.get(26)], 'Creates an immobile plane of permeable energy up to 20 feet by 20 feet (6.1 m by 6.1 m) for one hour. The plane conforms to the space available. Flames passing through the plane are extinguished.'),
+  new Cypher('Force Cube Projector', false, 3, [formMap.get(23), formMap.get(24), formMap.get(25), formMap.get(26)], 'Creates an immobile cube composed of six planes of solid force, each 30 feet (9.1 m) to a side, for one hour. The planes conform to the space available.'),
+  new Cypher('Force Nodule', true, 0, [formMap.get(9)], 'For the next 28 hours, the armor the nodule is attached to is bolstered by a powerful force field, adding 2 to the Armor it provides.'),
+  new Cypher('Force Screen Projector', true, 3, [formMap.get(23), formMap.get(24), formMap.get(25), formMap.get(26)], 'Creates an immobile plane of solid force up to 20 feet by 20 feet (6.1 m by 6.1 m) for one hour. The plane conforms to the space available.'),
+  new Cypher('Force Shield Projector', true, 3, [formMap.get(23), formMap.get(24), formMap.get(25), formMap.get(26), formMap.get(27)], 'Creates a shimmering energy shield around the user for one hour, during which time he gains +3 Armor (+4 Armor if the cypher is level 5 or higher).'),
+  new Cypher('Friction-Reducing Gel', true, 0, [formMap.get(22)], 'Sprayed across an area up to 10 feet (3 m) square, this gel makes things extremely slippery. For one hour, the difficulty of movement tasks in the area is increased by three steps.'),
+  new Cypher('Frigid Wall Projector', true, 2, [formMap.get(28)], 'Creates a wall of supercooled air up to 30 feet by 30 feet by 1 foot (9.1 m by 9.1 m by 0.3 m) that inflicts damage equal to the cypher level on anything that passes through it. The wall conforms to the space available. It lasts for ten minutes.'),
+  new Cypher('Gas Bomb', true, 2, [formMap.get(16), formMap.get(18), formMap.get(19), formMap.get(26)], 'Bursts in a poisonous cloud within an immediate distance. The cloud lingers for 1d6 rounds unless conditions dictate otherwise', gasBomb),
 ];
 
 export default cyphers;
