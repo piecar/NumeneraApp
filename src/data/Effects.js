@@ -73,3 +73,32 @@ export const gasBomb = (diceRoll) => {
   return 'Rage gas: living creatures that breathe and think make a melee attack on the nearest creature and continue to do so for a number of rounds equal to the cypher level.';
 };
 
+export const hunterSeeker = (diceRoll) => {
+  if (diceRoll <= 50) {
+    return 'Inflicts 8 points of damage.';
+  } else if (diceRoll >= 51 && diceRoll <= 80) {
+    return 'Bears a poisoned needle that inflicts 3 points of damage plus poison';
+  } else if (diceRoll >= 81 && diceRoll <= 90) {
+    return 'Explodes, inflicting 6 points of damage to all within immediate range';
+  } else if (diceRoll >= 91 && diceRoll <= 95) {
+    return 'Shocks for 4 points of electricity damage, and stuns for one round per cypher level.';
+  }
+  return 'Covers target in sticky goo that immediately hardens, holding him fast until he breaks out\n' +
+    'with a Might action (difficulty equal to the cypher level + 2).';
+};
+
+export const imageProjector = (diceRoll) => {
+  if (diceRoll <= 20) {
+    return 'Terrifying creature of an unknown species, perhaps no longer alive in the world (10-foot [3 m] cube)';
+  } else if (diceRoll >= 21 && diceRoll <= 40) {
+    return 'Huge machine that obscures sight (30-foot [9 m] cube)';
+  } else if (diceRoll >= 41 && diceRoll <= 50) {
+    return 'Beautiful pastoral scene (50-foot [15 m] cube)';
+  } else if (diceRoll >= 51 && diceRoll <= 60) {
+    return 'Food that looks delicious but may not be familiar (10-foot [3 m] cube)\n';
+  } else if (diceRoll >= 61 && diceRoll <= 80) {
+    return 'Solid color that obscures sight (50-foot [15 m] cube)';
+  }
+  return 'Incomprehensible scene that is disorienting and strange (20-foot [6.1 m] cube)';
+};
+

@@ -1,4 +1,4 @@
-import { chemicalFactory, detonation, gasBomb } from './Effects';
+import { chemicalFactory, detonation, gasBomb, hunterSeeker, imageProjector } from './Effects';
 
 const formFactors = [
   [1, 'Gloves'],
@@ -29,6 +29,18 @@ const formFactors = [
   [26, 'Handheld Device'],
   [27, 'Subdermal Injector'],
   [28, 'Complex Device'],
+  [29, 'Boots'],
+  [30, 'Small platform on which the user must stand'],
+  [31, 'Arm- or shoulder-mounted launcher'],
+  [32, 'Headband with device on forehead'],
+  [33, 'Handheld device with glass pane'],
+  [34, 'Phases into eye, phases out when used'],
+  [35, 'Adheres to temple and launches projectile'],
+  [36, 'Handheld device that launches projectile'],
+  [37, 'Adhesive patch that activates when slapped'],
+  [38, 'Canister containing slime'],
+  [39, 'Disk that adheres to forehead'],
+  [40, 'Small sphere with a thick screw protrusion'],
 ];
 
 export class Cypher {
@@ -83,6 +95,24 @@ const cyphers = [
   new Cypher('Friction-Reducing Gel', true, 0, [formMap.get(22)], 'Sprayed across an area up to 10 feet (3 m) square, this gel makes things extremely slippery. For one hour, the difficulty of movement tasks in the area is increased by three steps.'),
   new Cypher('Frigid Wall Projector', true, 2, [formMap.get(28)], 'Creates a wall of supercooled air up to 30 feet by 30 feet by 1 foot (9.1 m by 9.1 m by 0.3 m) that inflicts damage equal to the cypher level on anything that passes through it. The wall conforms to the space available. It lasts for ten minutes.'),
   new Cypher('Gas Bomb', true, 2, [formMap.get(16), formMap.get(18), formMap.get(19), formMap.get(26)], 'Bursts in a poisonous cloud within an immediate distance. The cloud lingers for 1d6 rounds unless conditions dictate otherwise', gasBomb),
+  new Cypher('Gravity Nullifier', true, 3, [formMap.get(23), formMap.get(24), formMap.get(25), formMap.get(27), formMap.get(29), formMap.get(30)], ' For one hour, the user can float into the air, moving vertically (but not horizontally without some other action, such as pushing along the ceiling) up to a short distance per round. The user must weigh less than 50 pounds (22 kg) per level of the cypher'),
+  new Cypher('Gravity-Nullifying Spray ', false, 2, [formMap.get(22)], ' A nonliving object about the size of a person or smaller sprayed by this cypher floats 1d20 feet in the air permanently and no longer has weight if carried (though it needs to be strapped down).'),
+  new Cypher('Heat Nodule', true, 0, [formMap.get(8)], 'For the next 28 hours, each time the weapon the nodule is attached to strikes a solid creature or object, it generates a burst of heat, inflicting an additional 2 points of damage.'),
+  new Cypher('Hunter/Seeker', false, 0, [formMap.get(26), formMap.get(28), formMap.get(31)], 'With long-range movement, this intelligent missile tracks and attacks a specified target (target must be within sight when selected). If it misses, it continues to attack one additional time per cypher level until it hits. For example, a level 4 hunter/seeker will attack a maximum of five times.', hunterSeeker),
+  new Cypher('Image Projector', true, 0, [formMap.get(32), formMap.get(33)], 'Projects one of the following immobile images in the area described for one hour. The image appears 25 feet (7.6 m) away from the user. Scenes include movement, sound, and smell.', imageProjector),
+  new Cypher('Inferno Wall Projector', true, 2, [formMap.get(28)], 'Creates a wall of extreme heat up to 30 feet by 30 feet by 1 foot (9.1 m by 9.1 m by 0.3 m) that inflicts damage equal to the cypher level on anything that passes through it. The wall conforms to the space available. It lasts for ten minutes.'),
+  new Cypher('Infiltrator', false, 0, [formMap.get(34), formMap.get(35), formMap.get(36)], 'Tiny capsule launches and moves at great speed, mapping and scanning an unknown area. It moves 500 feet (152 m) per level, scanning an area up to 50 feet (15 m) per level away from it. It identifies basic layout, creatures, and major energy sources. Its movement is blocked by any physical or energy barrier.'),
+  new Cypher('Instant Servant ', false, 0, [formMap.get(26)], 'Small device expands into a humanoid automaton that is roughly 2 feet (0.6 m) tall. It is a creature equal to the cypher level and can understand the verbal commands of the character who activates it. Once activated, commanding the servant is not an action. It can make attacks or perform actions as ordered to the best of its abilities, but it cannot speak.\n' +
+    'The automaton has short-range movement but never goes farther than long range away from the character who activated it. At the GM’s discretion, the servant might have specialized knowledge, such as how to operate a particular device. Otherwise, it has no special knowledge. In any case, the servant is not artificially intelligent or capable of initiating action. It does only as commanded.\n' +
+    'The servant operates for one hour per cypher level.'),
+  new Cypher('Instant Shelter', true, 3, [formMap.get(26)], 'With the addition of water and air, the small device expands into a simple one-room structure with a door and a transparent window. The structure is 10 feet by 10 feet by 20 feet (3 m by 3 m by 6.1 m). It is made from a form of shapestone and is permanent and immobile once created.'),
+  new Cypher('Intellect Enhancement', true, 2, [formMap.get(3), formMap.get(4), formMap.get(5), formMap.get(37)], 'Substance adds 1 to Intellect Edge for one hour.'),
+  new Cypher('Invisibility Nodule', true, 0, [formMap.get(9)], 'For the next 28 hours, the armor the nodule is attached to is invisible, making the wearer appear to be unarmored.'),
+  new Cypher('Knowledge Enhancement', true, 0, [formMap.get(3), formMap.get(4), formMap.get(5), formMap.get(37)], 'For the next 28 hours, the character has training in a predetermined skill.'),
+  new Cypher('Lightning Wall Projector', true, 2, [formMap.get(28)], 'Creates a wall of electric bolts up to 30 feet by 30 feet by 1 foot (9.1 m by 9.1 m by 0.3 m) that inflicts damage equal to the cypher level on anything that passes through it. The wall conforms to the space available. It lasts for ten minutes.'),
+  new Cypher('Living Solvent', true, 4, [formMap.get(38)], 'Once released, this organic slime dissolves 1 cubic foot of material each round. After one round per cypher level, the slime dies and becomes inert.'),
+  new Cypher('Machine Control Implant', true, 2, [formMap.get(3), formMap.get(4), formMap.get(11), formMap.get(39)], 'When activated, the cypher splits into two pieces. One is affixed to a numenera device and the other to a character. The character can then use his mind to control the device at long range, bidding it to do anything it could do normally. Thus, a device could be activated or deactivated, and a vehicle could be piloted. The control lasts for ten minutes, and once the device is chosen, it cannot be changed.'),
+  new Cypher('Magnetic Attack Drill', true, 2, [formMap.get(40)], 'The user throws this cypher at a target within short range, and it drills into the target for one round, inflicting damage equal to the cypher level. If the target is made of metal or wearing metal (such as armor), the difficulty of the attack is decreased by one step.'),
 ];
 
 export default cyphers;
