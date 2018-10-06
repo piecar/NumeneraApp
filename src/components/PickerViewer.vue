@@ -2,12 +2,13 @@
   <div class="picker">
     <h1>{{ msg }}</h1>
     <CypherPicker></CypherPicker>
-    <h2>Oddity Picker</h2>
+    <OddityPicker></OddityPicker>
   </div>
 </template>
 
 <script>
 import CypherPicker from './CypherPicker';
+import OddityPicker from './OddityPicker';
 
 export default {
   name: 'PickerViewer',
@@ -17,6 +18,7 @@ export default {
     };
   },
   components: {
+    OddityPicker,
     CypherPicker,
   },
 };

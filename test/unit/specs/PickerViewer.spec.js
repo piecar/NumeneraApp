@@ -1,6 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
 import PickerViewer from '@/components/PickerViewer';
 import CypherPicker from '@/components/CypherPicker';
+import OddityPicker from '@/components/OddityPicker';
 
 describe('PickerViewer.vue', () => {
   let Component;
@@ -19,5 +20,10 @@ describe('PickerViewer.vue', () => {
   it('should contain a CypherPicker', () => {
     const wrapper = shallowMount(PickerViewer);
     expect(wrapper.contains(CypherPicker)).toBe(true);
+  });
+
+  it('should contain a OddityPicker', () => {
+    const wrapper = shallowMount(PickerViewer);
+    expect(wrapper.contains(OddityPicker)).toBe(true);
   });
 });
