@@ -54,7 +54,7 @@ export const gasBomb = (diceRoll) => {
   } else if (diceRoll >= 11 && diceRoll <= 20) {
     return 'Choking gas: living creatures that breathe lose their actions to choking and coughing for a number of rounds equal to the cypher level.';
   } else if (diceRoll >= 21 && diceRoll <= 50) {
-    return 'Poison gas: living creatures that breathe suffer damage equal to the cypher level.s';
+    return 'Poison gas: living creatures that breathe suffer damage equal to the cypher level\'s';
   } else if (diceRoll >= 51 && diceRoll <= 60) {
     return 'Corrosive gas: everything suffers damage equal to the cypher level.';
   } else if (diceRoll >= 61 && diceRoll <= 65) {
@@ -100,5 +100,103 @@ export const imageProjector = (diceRoll) => {
     return 'Solid color that obscures sight (50-foot [15 m] cube)';
   }
   return 'Incomprehensible scene that is disorienting and strange (20-foot [6.1 m] cube)';
+};
+
+export const mentalScrambler = (diceRoll) => {
+  if (diceRoll <= 30) {
+    return 'Victims cannot act.';
+  } else if (diceRoll >= 31 && diceRoll <= 40) {
+    return 'Victims cannot speak.';
+  } else if (diceRoll >= 41 && diceRoll <= 50) {
+    return 'Victims move slowly (immediate range) and clumsily.';
+  } else if (diceRoll >= 51 && diceRoll <= 60) {
+    return 'Victims cannot see or hear.';
+  } else if (diceRoll >= 61 && diceRoll <= 70) {
+    return 'Victims lose all sense of direction, depth, and proportion.';
+  } else if (diceRoll >= 71 && diceRoll <= 80) {
+    return 'Victims do not recognize anyone they know.';
+  } else if (diceRoll >= 81 && diceRoll <= 88) {
+    return 'Victims suffer partial amnesia.';
+  } else if (diceRoll >= 89 && diceRoll <= 94) {
+    return 'Victims suffer total amnesia.';
+  } else if (diceRoll >= 95 && diceRoll <= 98) {
+    return 'Victims lose all inhibitions, revealing secrets and performing surprising actions.';
+  }
+  return 'Victims’ ethics are inverted.';
+};
+
+export const poisonEmotion = (diceRoll) => {
+  if (diceRoll <= 20) {
+    return 'Anger. Likely to attack anyone who disagrees with him. Very hard to interact with; the difficulty of all such actions is increased by two steps.';
+  } else if (diceRoll >= 21 && diceRoll <= 40) {
+    return 'Fear. Flees in terror for one minute when threatened.';
+  } else if (diceRoll >= 41 && diceRoll <= 60) {
+    return 'Lust. Cannot focus on any nonsexual activity.';
+  } else if (diceRoll >= 61 && diceRoll <= 75) {
+    return 'Sadness. The difficulty of all tasks is increased by one step.';
+  } else if (diceRoll >= 76 && diceRoll <= 85) {
+    return 'Complacency. Has no motivation. The difficulty of all tasks is increased by two steps.';
+  } else if (diceRoll >= 86 && diceRoll <= 95) {
+    return 'Joy. Easy to interact with in a pleasant manner; the difficulty of all such actions is decreased by one step.';
+  }
+  return 'Love. Much easier to interact with; the difficulty of all such actions is decreased by two steps, but temporary attachment is likely.';
+};
+
+export const poisonExplosion = (diceRoll) => {
+  if (diceRoll <= 25) {
+    return 'The detonator is activated (must be within long range).';
+  } else if (diceRoll >= 26 && diceRoll <= 40) {
+    return 'A specified amount of time passes.';
+  } else if (diceRoll >= 41 && diceRoll <= 50) {
+    return 'The victim takes a specific action.';
+  } else if (diceRoll >= 51 && diceRoll <= 55) {
+    return 'A specific note is sung or played on an instrument within short range.';
+  } else if (diceRoll >= 56 && diceRoll <= 60) {
+    return 'The victim smells a specific scent within immediate range.';
+  } else if (diceRoll >= 61 && diceRoll <= 80) {
+    return 'The victim comes within long range of the detonator.';
+  }
+  return 'The victim is no longer within long range of the detonator.';
+};
+
+export const poisonMindControlling = (diceRoll) => {
+  if (diceRoll <= 20) {
+    return 'Lays down for one minute with eyes closed when told to do so.';
+  } else if (diceRoll >= 21 && diceRoll <= 40) {
+    return 'Flees in terror for one minute when threatened.';
+  } else if (diceRoll >= 41 && diceRoll <= 60) {
+    return 'Answers questions truthfully for one minute.';
+  } else if (diceRoll >= 61 && diceRoll <= 75) {
+    return 'Attacks close friend for one round when within immediate range.';
+  } else if (diceRoll >= 76 && diceRoll <= 85) {
+    return 'Obeys next verbal command given (if it is understood).';
+  } else if (diceRoll >= 86 && diceRoll <= 95) {
+    return 'For 28 hours, becomes sexually attracted to the next creature of its own species that it sees.';
+  }
+  return 'Moves toward the next red object seen in lieu of all other actions, ignoring self preservation';
+};
+
+export const rayEmitter = (diceRoll) => {
+  if (diceRoll <= 50) {
+    return 'Heat/concentrated light.';
+  } else if (diceRoll >= 51 && diceRoll <= 60) {
+    return 'Cell-disrupting radiation';
+  } else if (diceRoll >= 61 && diceRoll <= 80) {
+    return 'Force';
+  } else if (diceRoll >= 81 && diceRoll <= 87) {
+    return 'Magnetic wave';
+  } else if (diceRoll >= 88 && diceRoll <= 93) {
+    return 'Molecular bond disruption.';
+  }
+  return 'Concentrated cold';
+};
+
+export const rejuvenator = (diceRoll) => {
+  if (diceRoll <= 50) {
+    return 'Might Pool';
+  } else if (diceRoll >= 51 && diceRoll <= 75) {
+    return 'Speed Pool';
+  }
+  return 'Intellect Pool';
 };
 

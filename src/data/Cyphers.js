@@ -1,4 +1,12 @@
-import { chemicalFactory, detonation, gasBomb, hunterSeeker, imageProjector } from './Effects';
+import {
+  chemicalFactory,
+  detonation,
+  gasBomb,
+  hunterSeeker,
+  imageProjector,
+  mentalScrambler,
+  poisonEmotion, poisonExplosion, poisonMindControlling, rayEmitter, rejuvenator,
+} from './Effects';
 
 const formFactors = [
   [1, 'Gloves'],
@@ -41,6 +49,26 @@ const formFactors = [
   [38, 'Canister containing slime'],
   [39, 'Disk that adheres to forehead'],
   [40, 'Small sphere with a thick screw protrusion'],
+  [41, 'Gloves with metal plates'],
+  [42, 'Small pyramid-shaped metallic device'],
+  [43, 'Eyeglasses'],
+  [44, 'Contact Lenses'],
+  [45, 'Goggles'],
+  [46, 'Complex metal and glass device'],
+  [47, 'Wrist-mounted sprayer'],
+  [48, 'Canister with hose'],
+  [49, 'Injection into fingertip'],
+  [50, 'Device similar to hilt'],
+  [51, 'Injection into spine'],
+  [52, 'Disk that can be affixed to the floor or another surface'],
+  [53, 'Medallion'],
+  [54, 'Lipstick'],
+  [55, 'False fingertip'],
+  [56, 'Ring with Needle'],
+  [57, 'Subdermal Implant'],
+  [58, 'Wristband'],
+  [59, 'Metal Spike'],
+  [60, 'Device that splits into two parts when activated, one with a glass screen'],
 ];
 
 export class Cypher {
@@ -113,6 +141,27 @@ const cyphers = [
   new Cypher('Living Solvent', true, 4, [formMap.get(38)], 'Once released, this organic slime dissolves 1 cubic foot of material each round. After one round per cypher level, the slime dies and becomes inert.'),
   new Cypher('Machine Control Implant', true, 2, [formMap.get(3), formMap.get(4), formMap.get(11), formMap.get(39)], 'When activated, the cypher splits into two pieces. One is affixed to a numenera device and the other to a character. The character can then use his mind to control the device at long range, bidding it to do anything it could do normally. Thus, a device could be activated or deactivated, and a vehicle could be piloted. The control lasts for ten minutes, and once the device is chosen, it cannot be changed.'),
   new Cypher('Magnetic Attack Drill', true, 2, [formMap.get(40)], 'The user throws this cypher at a target within short range, and it drills into the target for one round, inflicting damage equal to the cypher level. If the target is made of metal or wearing metal (such as armor), the difficulty of the attack is decreased by one step.'),
+  new Cypher('Magnetic Master', true, 2, [formMap.get(41), formMap.get(42)], 'Establishes a connection with one metal object within short range that a human could hold in one hand. After this connection is established, the user can move or manipulate the object anywhere within short range (each movement or manipulation is an action). For example, the user could wield a weapon or drag a helm affixed to a foe’s head to and fro. The connection lasts for ten rounds.'),
+  new Cypher('Magnetic Shield', true, 2, [formMap.get(41), formMap.get(42)], 'For ten minutes, metal objects cannot come within immediate range of the activated device. Metal items already in the area when the device is activated are slowly pushed out.'),
+  new Cypher('Memory Lenses', true, 0, [formMap.get(43), formMap.get(44), formMap.get(45)], ' Allows the wearer to mentally record everything she sees for thirty seconds and store the recording permanently in her long-term memory. This cypher is useful for watching someone pick a specific lock, enter a complex code, or do something else that happens quickly.'),
+  new Cypher('Mental Scrambler ', true, 2, [formMap.get(46)], ' Two rounds after being activated, the device creates an invisible field that fills an area within short range and lasts for one minute. The field scrambles the mental processes of all thinking creatures. The effect lasts as long as they remain in the field and for 1d6 rounds after, although an Intellect defense roll is allowed each round to act normally (both in the field and after leaving it). Each mental scrambler is keyed to a specific effect.', mentalScrambler),
+  new Cypher('Metal Death', true, 2, [formMap.get(47), formMap.get(48)], 'Produces a stream of foam that covers an area about 3 feet by 3 feet (0.9 m by 0.9 m), transforming any metal that it touches into a substance as brittle as thin glass. The foam affects metal to a depth of about 6 inches (15 cm).'),
+  new Cypher('Monoblade', true, 2, [formMap.get(6), formMap.get(49), formMap.get(50)], 'Produces a 6-inch (15 cm) blade that’s the same level as the cypher. The blade cuts through any material of a level lower than its own. If used as a weapon, it is a light weapon that ignores Armor of a level lower than its own. The blade lasts for ten minutes.'),
+  new Cypher('Motion Sensor ', true, 2, [formMap.get(12), formMap.get(51), formMap.get(52)], ' Indicates when any movement occurs within short range, or when large creatures or objects move within long range (the cypher distinguishes between the two). It also indicates the number and size of the creatures or objects in motion. Once activated, it operates for one hour.'),
+  new Cypher('Personal Environment Field ', true, 2, [formMap.get(23), formMap.get(24), formMap.get(26), formMap.get(53)], 'Creates an aura of temperature and atmosphere that will sustain a human safely for 28 hours. The aura extends to 1 foot (0.3 m) around the user. It does not protect against sudden flashes of temperature change (such as from a heat ray). A small number of these cyphers (1%) accommodate the preferred environment of a nonhuman, nonterrestrial creature'),
+  new Cypher('Phase Changer', true, 1, [formMap.get(23), formMap.get(24), formMap.get(26), formMap.get(53)], ' Puts the user out of phase for one minute. During this time, the user can pass through solid objects as though she were entirely insubstantial, like a ghost. She cannot make physical attacks or be physically attacked.'),
+  new Cypher('Phase Disruptor ', true, 2, [formMap.get(22), formMap.get(28), formMap.get(52)], 'Puts a portion of a physical structure (like a wall or floor) out of phase for one hour. It affects an area equal to a 10-foot (3 m) cube. While the area is out of phase, creatures and objects can pass freely through it as if it were not there, although one cannot see through it, and it blocks light.'),
+  new Cypher('Poison (Emotion)', true, 2, [formMap.get(3), formMap.get(4), formMap.get(5), formMap.get(54), formMap.get(55), formMap.get(56)], 'The victim feels a specific emotion for one hour.', poisonEmotion),
+  new Cypher('Poison (Explosive)', false, 1, [formMap.get(3), formMap.get(4), formMap.get(5), formMap.get(54), formMap.get(55), formMap.get(56)], 'Once this substance enters the bloodstream, it travels to the brain and reorganizes into an explosive that detonates when activated, inflicting 10 points of damage (ignoring Armor). Roll to determine the means of detonation', poisonExplosion),
+  new Cypher('Poison (Emotion)', true, 2, [formMap.get(3), formMap.get(4), formMap.get(5), formMap.get(54), formMap.get(55), formMap.get(56)], 'The victim must carry out a specific action in response to a specific trigger', poisonMindControlling),
+  new Cypher('Poison (Mind-Disrupting)', true, 2, [formMap.get(3), formMap.get(4), formMap.get(5), formMap.get(54), formMap.get(55), formMap.get(56)], 'The victim suffers Intellect damage equal to the cypher’s level and cannot take actions for a number of rounds equal to the cypher’s level.'),
+  new Cypher('Psychic Communique', true, 2, [formMap.get(4), formMap.get(10), formMap.get(32)], 'Allows the user to project a one-time, oneway telepathic message of up to ten words, with an unlimited range, to anyone he knows.'),
+  new Cypher('Ray Emitter', true, 2, [formMap.get(1), formMap.get(24), formMap.get(44), formMap.get(13), formMap.get(23), formMap.get(31), formMap.get(26), formMap.get(57), formMap.get(58)], ' Allows the user to project a ray of destructive energy up to 200 feet (61m) that inflicts damage equal to the cypher’s level.', rayEmitter),
+  new Cypher('Ray Emitter (Numbing) ', true, 2, [formMap.get(1), formMap.get(24), formMap.get(44), formMap.get(13), formMap.get(23), formMap.get(31), formMap.get(26), formMap.get(57), formMap.get(58)], 'Allows the user to project a ray of energy up to 200 feet (61 m) that numbs one limb of the target, making it useless for one minute. A small number of these devices (5%) induce numbing that lasts for one hour'),
+  new Cypher('Ray Emitter (Paralysis) ', true, 2, [formMap.get(1), formMap.get(24), formMap.get(44), formMap.get(13), formMap.get(23), formMap.get(31), formMap.get(26), formMap.get(57), formMap.get(58)], 'Allows the user to project a ray of energy up to 200 feet (61 m) that paralyzes the target for one minute. A small number of these devices (5%) induce paralysis that lasts for one hour.'),
+  new Cypher('Reality Spike ', true, 4, [formMap.get(59)], 'Once activated, the spike does not move—ever—even if activated in midair. A Might action will dislodge the spike, but then it is ruined.'),
+  new Cypher('Rejuvenator', true, 2, [formMap.get(3), formMap.get(4), formMap.get(5), formMap.get(37)], 'Substance restores a number of points equal to the cypher’s level to one random Pool. Roll percentile', rejuvenator),
+  new Cypher('Remote Viewer', true, 0, [formMap.get(60)], ' For one hour, the glass screen on one part shows everything going on in the vicinity of the other part, regardless of the distance between the two parts.', rejuvenator),
 ];
 
 export default cyphers;

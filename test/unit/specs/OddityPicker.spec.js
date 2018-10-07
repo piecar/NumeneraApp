@@ -1,7 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import OddityPicker from '@/components/OddityPicker';
 import FormButton from '@/components/FormButton';
-import { Cypher } from '../../../src/data/Cyphers';
 
 describe('CypherPicker.vue', () => {
   let Wrapper;
@@ -32,13 +31,13 @@ describe('CypherPicker.vue', () => {
   });
 
   it('should pick a correct oddity', () => {
-    Wrapper.setData({ d100: 0, oddity: '' });
+    Wrapper.setData({ d100: 1, oddity: '' });
     Wrapper.vm.handleButtonClick();
     expect(Wrapper.vm.$data.oddity).toBe('Crystal that shatters easily but then instantly reforms');
   });
 
   it('should show oddity if showOddity is true', () => {
-    Wrapper.setData({d100: 0, oddity: '', showOddity: false  });
+    Wrapper.setData({ d100: 1, oddity: '', showOddity: false });
     Wrapper.vm.handleButtonClick();
     expect(Wrapper.vm.$el.querySelector('p').textContent)
       .toEqual('Crystal that shatters easily but then instantly reforms');
