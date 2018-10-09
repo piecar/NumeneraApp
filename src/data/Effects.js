@@ -200,3 +200,34 @@ export const rejuvenator = (diceRoll) => {
   return 'Intellect Pool';
 };
 
+export const skillBoost = (diceRoll) => {
+  if (diceRoll <= 15) {
+    return 'Melee Attack';
+  } else if (diceRoll >= 16 && diceRoll <= 30) {
+    return 'Ranged Attack';
+  } else if (diceRoll >= 31 && diceRoll <= 40) {
+    return 'Speed Defense';
+  } else if (diceRoll >= 41 && diceRoll <= 50) {
+    return 'Might Defense';
+  } else if (diceRoll >= 51 && diceRoll <= 60) {
+    return 'Intellect Defense';
+  } else if (diceRoll >= 61 && diceRoll <= 68) {
+    return 'Jumping';
+  }else if (diceRoll >= 69 && diceRoll <= 76) {
+    return 'Climbing';
+  } else if (diceRoll >= 77 && diceRoll <= 84) {
+    return 'Running';
+  } else if (diceRoll >= 85 && diceRoll <= 92) {
+    return 'Swimming.';
+  } else if (diceRoll >= 93 && diceRoll <= 94) {
+    return 'Sneaking';
+  } else if (diceRoll >= 95 && diceRoll <= 96) {
+    return 'Balancing';
+  } else if (diceRoll >= 97 && diceRoll <= 98) {
+    return 'Perceiving';
+  } else if (diceRoll >= 99 && diceRoll <= 99) {
+    return 'Carrying';
+  }
+  return 'Escaping';
+};
+

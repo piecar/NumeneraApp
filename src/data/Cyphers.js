@@ -5,7 +5,7 @@ import {
   hunterSeeker,
   imageProjector,
   mentalScrambler,
-  poisonEmotion, poisonExplosion, poisonMindControlling, rayEmitter, rejuvenator,
+  poisonEmotion, poisonExplosion, poisonMindControlling, rayEmitter, rejuvenator, skillBoost,
 } from './Effects';
 
 const formFactors = [
@@ -69,6 +69,9 @@ const formFactors = [
   [58, 'Wristband'],
   [59, 'Metal Spike'],
   [60, 'Device that splits into two parts when activated, one with a glass screen'],
+  [61, 'Palm Disk'],
+  [62, 'Short Rod'],
+  [63, 'Gas Sprayer'],
 ];
 
 export class Cypher {
@@ -161,7 +164,19 @@ const cyphers = [
   new Cypher('Ray Emitter (Paralysis) ', true, 2, [formMap.get(1), formMap.get(24), formMap.get(44), formMap.get(13), formMap.get(23), formMap.get(31), formMap.get(26), formMap.get(57), formMap.get(58)], 'Allows the user to project a ray of energy up to 200 feet (61 m) that paralyzes the target for one minute. A small number of these devices (5%) induce paralysis that lasts for one hour.'),
   new Cypher('Reality Spike ', true, 4, [formMap.get(59)], 'Once activated, the spike does not move—ever—even if activated in midair. A Might action will dislodge the spike, but then it is ruined.'),
   new Cypher('Rejuvenator', true, 2, [formMap.get(3), formMap.get(4), formMap.get(5), formMap.get(37)], 'Substance restores a number of points equal to the cypher’s level to one random Pool. Roll percentile', rejuvenator),
-  new Cypher('Remote Viewer', true, 0, [formMap.get(60)], ' For one hour, the glass screen on one part shows everything going on in the vicinity of the other part, regardless of the distance between the two parts.', rejuvenator),
+  new Cypher('Repair Unit ', false, 4, [formMap.get(23), formMap.get(26), formMap.get(31)], 'Device becomes a multiarmed sphere that floats. It repairs one designated numenera device (of a level equal to or less than its own) that has been damaged but not destroyed. The repair unit can even create spare parts, unless the GM rules that the parts are too specialized or rare (in which case, the unit repairs the device entirely except for the specialized part). Repair time is 1d100 + 20 minutes.'),
+  new Cypher('Retaliation Nodule', true, 0, [formMap.get(9)], 'For the next 28 hours, anyone striking the armor the nodule is attached to triggers a small burst of electricity that inflicts 1 point of damage (no action or roll required).'),
+  new Cypher('Sheen', true, 2, [formMap.get(3), formMap.get(4), formMap.get(5)], 'For one week, the user’s cells are coated with a protective veneer that resists damage (+1 to Armor) and decreases the difficulty of Might defense rolls by two steps. However, healing is more difficult during this time; all recovery rolls suffer a –1 penalty.'),
+  new Cypher('Shock Nodule ', true, 0, [formMap.get(8)], 'For the next 28 hours, each time the weapon the nodule is attached to strikes a solid creature or object, it generates a burst of electricity, inflicting 1 additional point of damage.'),
+  new Cypher('Shocker', true, 4, [formMap.get(24), formMap.get(57), formMap.get(61), formMap.get(62)], 'Delivers a powerful burst of electricity that shocks any creature touched, inflicting damage equal to the cypher’s level.'),
+  new Cypher('Skill Boost', true, 0, [formMap.get(3), formMap.get(4), formMap.get(5)], 'Dramatically but temporarily alters the user’s mind and body so she can perform one specific physical action with the difficulty decreased by three steps. Once activated, this boost can be used a number of times equal to the cypher’s level, but only within a 28-hour period. The boost takes effect each time the action is performed, so a level 3 cypher boosts the first three times that action is attempted. The action can be one of a number of possibilities:', skillBoost),
+  new Cypher('Sleep Inducer ', true, 0, [formMap.get(3), formMap.get(4), formMap.get(5), formMap.get(6), formMap.get(24), formMap.get(49), formMap.get(63)], 'Touch or ingestion puts the victim to sleep for ten minutes or until awoken by a violent action or an extremely loud noise.'),
+  new Cypher('Sonic Hole', true, 2, [formMap.get(23), formMap.get(24), formMap.get(7), formMap.get(58)], 'Draws all sound within long range into the device for one round per cypher level. Within the affected area, no sound can be heard.'),
+  new Cypher('Sound Dampener', true, 2, [formMap.get(23), formMap.get(24), formMap.get(7), formMap.get(29), formMap.get(57), formMap.get(58)], 'Dampens all sound within immediate range, providing an asset for all creatures in the area to attempt stealthy actions.'),
+  new Cypher('Spatial Warp ', true, 4, [formMap.get(24)], 'When affixed to another numenera device that affects a single target at range, that range is increased to 1 mile (1.6 km) with no penalties. Space is temporarily warped in terms of seeing and reaching the target. If direct line of sight is important to the device’s effect, it remains important. Creating the spatial warp functions as one use of the device.'),
+  new Cypher('Speed Boost ', true, 2, [formMap.get(3), formMap.get(4), formMap.get(5), formMap.get(37)], 'Substance adds 1 to Speed Edge for one hour'),
+  new Cypher('Stim', true, 0, [formMap.get(3), formMap.get(4), formMap.get(5)], 'Decreases the difficulty of the next action taken by three steps.'),
+  new Cypher('Strength Boost ', true, 2, [formMap.get(3), formMap.get(4), formMap.get(5), formMap.get(37)], 'Substance adds 1 to Might Edge for one hour'),
 ];
 
 export default cyphers;
