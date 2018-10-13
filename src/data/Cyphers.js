@@ -72,6 +72,11 @@ const formFactors = [
   [61, 'Palm Disk'],
   [62, 'Short Rod'],
   [63, 'Gas Sprayer'],
+  [64, 'Full Bodysuit'],
+  [65, 'Injection that produces temporary subdermal, malleable implants'],
+  [66, 'Tube of moldable paste'],
+  [67, 'Tngestible liquid'],
+  [68, 'Glass Panel'],
 ];
 
 export class Cypher {
@@ -177,6 +182,20 @@ const cyphers = [
   new Cypher('Speed Boost ', true, 2, [formMap.get(3), formMap.get(4), formMap.get(5), formMap.get(37)], 'Substance adds 1 to Speed Edge for one hour'),
   new Cypher('Stim', true, 0, [formMap.get(3), formMap.get(4), formMap.get(5)], 'Decreases the difficulty of the next action taken by three steps.'),
   new Cypher('Strength Boost ', true, 2, [formMap.get(3), formMap.get(4), formMap.get(5), formMap.get(37)], 'Substance adds 1 to Might Edge for one hour'),
+  new Cypher('Subdual Field', false, 3, [formMap.get(28)], 'Two rounds after being activated, the device creates an invisible field that fills a specified area (such as a cube of a certain size) within long range of the device. The field lasts for one minute. It affects the minds of thinking beings within the field, preventing them from taking hostile actions. The effect lasts as long as they remain in the field and for 1d6 rounds after, although an Intellect defense roll is allowed each round to act normally (both in the field and after leaving it).'),
+  new Cypher('Telepathy Implant', true, 0, [formMap.get(3), formMap.get(4), formMap.get(11), formMap.get(49)], 'For one hour, the device enables long-range mental communication with anyone who has a matching implant. These devices are always found in groups of two or more.'),
+  new Cypher('Teleporter (Bounder)', true, 2, [formMap.get(23), formMap.get(24), formMap.get(26), formMap.get(28), formMap.get(58), formMap.get(64)], 'User teleports up to 100 × the cypher level in feet to a location he can see. He arrives safely with his possessions but cannot take anything else with him.'),
+  new Cypher('Teleporter (Traveler)', false, 4, [formMap.get(23), formMap.get(24), formMap.get(26), formMap.get(28), formMap.get(58), formMap.get(64)], 'User teleports up to 100 × the cypher level in miles to a location he has previously visited. He arrives safely with his possessions but cannot take anything else with him.'),
+  new Cypher('Temporal Viewer', false, 4, [formMap.get(26), formMap.get(28), formMap.get(58)], 'Displays moving images and sound, up to ten minutes in length, depicting events that occurred at the current location up to one year prior. The user specifies the time period shown by the viewer.'),
+  new Cypher('Time Dilation Nodule (Defensive)', true, 0, [formMap.get(9)], 'For the next 28 hours, the wearer of the armor moves in seemingly random, rapid jumps, a few inches to one side or the other, when attacked. This is an asset that modifies attacks by two steps in the wearer’s favor.'),
+  new Cypher('Time Dilation Nodule (Offensive))', true, 0, [formMap.get(8)], 'For the next 28 hours, the attacker moves at almost instantaneous speeds when he swings the weapon, modifying his attacks by two steps in his favor.'),
+  new Cypher('Tracer', true, 0, [formMap.get(26), formMap.get(28)], 'Fires a microscopic tracer that clings to any surface within short range. For the next 28 hours, the launcher shows the distance and direction to the tracer, as long as it is in the same dimension.'),
+  new Cypher('Visage Changer', false, 0, [formMap.get(4), formMap.get(65), formMap.get(66)], 'Changes the appearance of one human-sized creature. The change takes ten minutes to apply and lasts for 28 hours.'),
+  new Cypher('Visual Displacement Device', true, 0, [formMap.get(23), formMap.get(25), formMap.get(26)], 'Projects holographic images of the wearer to confuse attackers. The images appear around the wearer. This gives the wearer an asset to Speed defense actions for ten minutes.'),
+  new Cypher('Vocal Translator', false, 0, [formMap.get(4), formMap.get(14), formMap.get(39), formMap.get(67)], 'Translates everything said by the user into a language that anyone can understand for 28 hours.'),
+  new Cypher('Warmth Projector', true, 0, [formMap.get(3), formMap.get(23), formMap.get(27), formMap.get(64)], 'Keeps the user warm and comfortable in the harshest cold temperatures for 28 hours. During this time, the user has Armor equal to the cypher level that protects against cold damage.'),
+  new Cypher('Water Breather', true, 0, [formMap.get(3), formMap.get(4), formMap.get(67)], 'Allows an air breather to extract oxygen from water for eight hours so she can breathe underwater.'),
+  new Cypher('X-Ray Viewer', true, 4, [formMap.get(68)], 'When held up against a solid surface, this panel allows the user to see through up to 2 feet (0.6 m) of material. The panel works only if the cypher’s level is higher than the material’s level. The effect lasts for one minute.'),
 ];
 
 export default cyphers;
