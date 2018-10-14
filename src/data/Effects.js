@@ -213,7 +213,7 @@ export const skillBoost = (diceRoll) => {
     return 'Intellect Defense';
   } else if (diceRoll >= 61 && diceRoll <= 68) {
     return 'Jumping';
-  }else if (diceRoll >= 69 && diceRoll <= 76) {
+  } else if (diceRoll >= 69 && diceRoll <= 76) {
     return 'Climbing';
   } else if (diceRoll >= 77 && diceRoll <= 84) {
     return 'Running';
