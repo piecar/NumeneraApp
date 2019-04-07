@@ -1,14 +1,21 @@
 <template>
   <div class="picker">
     <h1>{{ msg }}</h1>
+    <FormButton
+      button-text="Login"
+      @buttonClick="handleButtonClick"
+    ></FormButton>
     <CypherPicker></CypherPicker>
     <OddityPicker></OddityPicker>
+
   </div>
 </template>
 
 <script>
-import CypherPicker from './CypherPicker';
-import OddityPicker from './OddityPicker';
+import CypherPicker from './CypherPicker.vue';
+import OddityPicker from './OddityPicker.vue';
+import FormButton from './FormButton.vue';
+import AuthService from '../auth/authService';
 
 export default {
   name: 'PickerViewer',
@@ -20,6 +27,12 @@ export default {
   components: {
     OddityPicker,
     CypherPicker,
+    FormButton,
+  },
+  methods: {
+    handleButtonClick() {
+      AuthService.login();
+    },
   },
 };
 </script>

@@ -6,9 +6,12 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit --watch"
+    "test:unit": "vue-cli-service test:unit",
+    "test:watch": "vue-cli-service test:unit --watch",
+    "test:watchall": "vue-cli-service test:unit --watchAll"
   },
   "dependencies": {
+    "auth0-js": "^9.10.0",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1"
   },
